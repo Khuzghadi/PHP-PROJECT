@@ -1,18 +1,19 @@
 {
-    "editor.accessibilityPageSize": 500,
-    "editor.autoClosingQuotes": "languageDefined",
-    "window.zoomLevel": 1,
-    "emeraldwalk.runonsave": {
-  "commands": [
-    {
-      "match": ".*",
-      "cmd": "git add . && git commit -m \"Auto-commit on save\" && git push origin main"
-    }
-  ],
-    "auto-commit.enabled": true,
-    "auto-commit.interval": 5,
-    "auto-commit.message": "Auto commit (every 5 minutes)",
-    "auto-commit.push": true
+  "editor.accessibilityPageSize": 500,
+  "editor.autoClosingQuotes": "languageDefined",
+  "window.zoomLevel": 1,
 
-  }
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "cmd": "git add . && git commit -m \"Auto-commit on save\" && git pull --rebase origin main && git push origin main"
+      }
+    ]
+  },
+
+  "auto-commit.enabled": true,
+  "auto-commit.interval": 5,
+  "auto-commit.message": "Auto commit (every 5 minutes)",
+  "auto-commit.push": true
 }
