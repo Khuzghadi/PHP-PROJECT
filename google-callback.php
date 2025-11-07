@@ -1,4 +1,4 @@
-// $client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');
+// $client->setRedirectUri('');
 <?php
 session_start();
 error_reporting(E_ALL);
@@ -10,7 +10,7 @@ require_once 'db.php';
 $client = new Google_Client();
 $client->setClientId('893942546879-32236p7a4defodh60gu72hhbuhf9dqtc.apps.googleusercontent.com');
 $client->setClientSecret('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');
-$client->setRedirectUri('http://localhost/google-callback.php');  // ensure this matches your server setup
+$client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');  // ensure this matches your server setup
 $client->addScope('email');
 $client->addScope('profile');
 
