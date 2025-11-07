@@ -253,7 +253,7 @@ function ChangeBtnText(btn, newText, disable) {
                             e.preventDefault();
                             
                             alert('Login successful! Redirecting to Signup page...');
-                            window.location.href = 'signup.html';
+                            window.location.href = 'signup.php';
                             });
                         </script>
                         <label><a title="Forgot Password click here" tabindex="5" href="Common/ForgotPassword.aspx">Forgot Password?</a></label>
