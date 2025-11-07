@@ -226,36 +226,28 @@ function ChangeBtnText(btn, newText, disable) {
                     <div>
                         <input type="submit" name="btnLogin" value="Login ITS" onclick="ChangeBtnText(this,'Authenticating...',false);"  id="btnLogin" tabindex="4" class="btn-login" />    
                     </div>
-                    <div class="select">
-                        <?php
-                            require_once __DIR__ . '/google-api-php-client/vendor/autoload.php';
+                    <?php
+require_once __DIR__ . '/google-api-php-client/vendor/autoload.php';
 
-                            $client = new Google_Client();
-                            $client->setClientId('893942546879-32236p7a4defodh60gu72hhbuhf9dqtc.apps.googleusercontent.com');
-                            $client->setClientSecret('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');
-                            $client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');
-                            $client->addScope('email');
-                            $client->addScope('profile');
+$client = new Google_Client();
+$client->setClientId('893942546879-32236p7a4defodh60gu72hhbuhf9dqtc.apps.googleusercontent.com');
+$client->setClientSecret('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');
+$client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');
+$client->addScope('email');
+$client->addScope('profile');
 
-                            $login_url = $client->createAuthUrl();
-                        ?>
+$login_url = $client->createAuthUrl();
+?>
 
-                        <!DOCTYPE html>
-                        <html>
-                        <head><title>Login</title></head>
-                        <body>
-                            <a href="<?php echo $login_url; ?>">Login with Google</a>
-                        </body>
-                        </html>
+<!DOCTYPE html>
+<html>
+<head><title>Login</title></head>
+<body>
+    <h2>Sign in to your account</h2>
+    <a href="<?php echo htmlspecialchars($login_url); ?>">Login with Google</a>
+</body>
+</html>
 
-                        <script>
-                            document.getElementById('loginForm').addEventListener('submit', function(e) {
-                            e.preventDefault();
-                            
-                            alert('Login successful! Redirecting to Signup page...');
-                            window.location.href = 'signup.php';
-                            });
-                        </script>
                         <label><a title="Forgot Password click here" tabindex="5" href="Common/ForgotPassword.aspx">Forgot Password?</a></label>
                     </div>
 
