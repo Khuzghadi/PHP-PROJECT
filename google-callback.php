@@ -27,7 +27,7 @@ if (isset($_GET['code'])) {
     $email = $data->email;
     $name  = $data->name;
 
-    if (!$stmt = $conn->prepare("SELECT * FROM zonal_heads WHERE email = ?")) {
+    if (!$stmt = $conn->prepare("SELECT * FROM zonal_head WHERE email = ?")) {
         die("Prepare failed: " . $conn->error);
     }
 
