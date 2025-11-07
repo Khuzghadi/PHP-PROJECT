@@ -3,7 +3,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once __DIR__ . '/vendor/autoload.php';  // adjust path if needed
+require_once __DIR__ . '/google-api-php-client/vendor/autoload.php';  // adjust path if needed
 require_once 'db.php';
 
 $client = new Google_Client();
