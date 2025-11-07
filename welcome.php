@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header('Location: frame.php');
+    header('Location: signup.php');
     exit();
 }
 echo "Welcome, " . $_SESSION['name'] . "<br>";
