@@ -1,4 +1,4 @@
-/*$client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');*/
+// $client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');
 <?php
 session_start();
 error_reporting(E_ALL);
