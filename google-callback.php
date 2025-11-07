@@ -21,7 +21,7 @@ if (isset($_GET['code'])) {
         $name = $data['name'];
         $picture = $data['picture'];
 
-        $query = $conn->prepare("SELECT * FROM users WHERE email=?");
+        $query = $conn->prepare("SELECT * FROM zonal_head WHERE email=?");
         $query->bind_param("s", $email);
         $query->execute();
         $result = $query->get_result();
