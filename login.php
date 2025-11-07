@@ -226,28 +226,6 @@ function ChangeBtnText(btn, newText, disable) {
                     <div>
                         <input type="submit" name="btnLogin" value="Login ITS" onclick="ChangeBtnText(this,'Authenticating...',false);"  id="btnLogin" tabindex="4" class="btn-login" />    
                     </div>
-                    <?php
-require_once __DIR__ . '/google-api-php-client/vendor/autoload.php';
-
-$client = new Google_Client();
-$client->setClientId('893942546879-32236p7a4defodh60gu72hhbuhf9dqtc.apps.googleusercontent.com');
-$client->setClientSecret('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');
-$client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');
-$client->addScope('email');
-$client->addScope('profile');
-
-$login_url = $client->createAuthUrl();
-?>
-
-<!DOCTYPE html>
-<html>
-<head><title>Login</title></head>
-<body>
-    
-    <a href="<?php echo htmlspecialchars($login_url); ?>">Login with Google</a>
-</body>
-</html>
-
                         <label><a title="Forgot Password click here" tabindex="5" href="Common/ForgotPassword.aspx">Forgot Password?</a></label>
                     </div>
 
@@ -255,6 +233,31 @@ $login_url = $client->createAuthUrl();
             </div>
         </section>
         </form>
+        <div class="select">
+    <?php
+        require_once __DIR__ . '/google-api-php-client/vendor/autoload.php';
+
+        $client = new Google_Client();
+        $client->setClientId('893942546879-32236p7a4defodh60gu72hhbuhf9dqtc.apps.googleusercontent.com');
+        $client->setClientSecret('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');
+        $client->setRedirectUri('http://localhost/NZ-IMS/google-callback.php');
+        $client->addScope('email');
+        $client->addScope('profile');
+
+        $login_url = $client->createAuthUrl();
+    ?>
+    
+    <a href="<?php echo $login_url; ?>" 
+       style="display:inline-block;
+              background:#4285F4;
+              color:white;
+              padding:10px 20px;
+              border-radius:4px;
+              text-decoration:none;">
+        Sign in with Google
+    </a>
+</div>
+
     </div>
 </body>
 </html>
