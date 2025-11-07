@@ -21,7 +21,7 @@ if (isset($_GET['code'])) {
         $name = $google_user->name;
         $picture = $google_user->picture;
 
-        $query = $conn->prepare("SELECT * FROM users WHERE email=?");
+        $query = $conn->prepare("SELECT * FROM zonal_head WHERE email=?");
         if (!$query) {
             die("Prepare failed: " . $conn->error);
         }
@@ -34,7 +34,7 @@ if (isset($_GET['code'])) {
             $_SESSION['name'] = $name;
             $_SESSION['picture'] = $picture;
         } else {
-            $insert = $conn->prepare("INSERT INTO users (name, email, picture) VALUES (?, ?, ?)");
+            $insert = $conn->prepare("INSERT INTO zonal_head (name, email, picture) VALUES (?, ?, ?)");
             if (!$insert) {
                 die("Prepare failed: " . $conn->error);
             }
