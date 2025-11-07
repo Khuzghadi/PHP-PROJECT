@@ -243,7 +243,7 @@ $login_url = $client->createAuthUrl();
 <html>
 <head><title>Login</title></head>
 <body>
-    <h2>Sign in to your account</h2>
+    
     <a href="<?php echo htmlspecialchars($login_url); ?>">Login with Google</a>
 </body>
 </html>
