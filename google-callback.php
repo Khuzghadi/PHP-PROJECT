@@ -44,11 +44,9 @@ if (isset($_GET['code'])) {
             $_SESSION['email'] = $email;
             $_SESSION['name'] = $name;
             $_SESSION['picture'] = $picture;
-
-            header('Location: frame.php');
         }
 
-        
+        // header('Location: frame.php');
         exit();
     } else {
         echo "Error fetching token: " . $token['error'];
