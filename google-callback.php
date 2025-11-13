@@ -46,7 +46,7 @@ if (isset($_GET['code'])) {
             $_SESSION['picture'] = $picture;
         }
 
-        // header('Location: frame.php');
+        header('Location: dashboard.php');
         exit();
     } else {
         echo "Error fetching token: " . $token['error'];
