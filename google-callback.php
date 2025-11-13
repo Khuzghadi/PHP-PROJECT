@@ -30,10 +30,6 @@ if (isset($_GET['code'])) {
         $result = $query->get_result();
 
         if ($result->num_rows > 0) {
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = $name;
-            $_SESSION['picture'] = $picture;
-        } else {
             $insert = $conn->prepare("INSERT INTO zonal_head (name, email, picture) VALUES (?, ?, ?)");
             if (!$insert) {
                 die("Prepare failed: " . $conn->error);
