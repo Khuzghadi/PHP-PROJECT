@@ -29,18 +29,18 @@ if (isset($_GET['code'])) {
         $query->execute();
         $result = $query->get_result();
 
-        if ($result->num_rows > 0) {
+        if ($result->num_rows == 0) {
             $insert = $conn->prepare("INSERT INTO zonal_head (name, email, picture) VALUES (?, ?, ?)");
             if (!$insert) {
                 die("Prepare failed: " . $conn->error);
             }
             $insert->bind_param("sss", $name, $email, $picture);
             $insert->execute();
-
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = $name;
-            $_SESSION['picture'] = $picture;
         }
+        $_SESSION['email'] = $email;
+        $_SESSION['name'] = $name;
+        $_SESSION['picture'] = $picture;
+        
 
         header('Location: frame.php');
         exit();
