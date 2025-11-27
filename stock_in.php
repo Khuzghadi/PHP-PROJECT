@@ -1,7 +1,10 @@
 <?php
 session_start();
 include "config.php";
-
+include "auth_check.php"; 
+// ONLY ADMIN CAN ACCESS
+if (!isset($_SESSION['user_id'])) { header("Location: loginForm.html?msg=Please login");
+exit; }
 // ALLOW ONLY ADMIN & STAFF
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");

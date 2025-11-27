@@ -15,10 +15,15 @@ if(isset($_POST['login'])){
             $_SESSION['user'] = $user;
             $_SESSION['role'] = $row['role'];
             $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['zone_name'] = $row['zone_name'];
             if($_SESSION['role'] == 'admin'){
                 header("Location: dashboard.php");
+                $conn->query("UPDATE users SET force_logout = 0 WHERE user_id = " . $row['user_id']);
+
             }else{
                 header("Location: user_dashboard.php");
+                $conn->query("UPDATE users SET force_logout = 0 WHERE user_id = " . $row['user_id']);
+
             }
             
         }else{

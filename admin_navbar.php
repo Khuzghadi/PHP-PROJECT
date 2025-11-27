@@ -95,8 +95,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
         </li>
 
         <!-- USERS MANAGEMENT -->
-        <li class="nav-item">
-          <a class="nav-link" href="users.php">Users</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Users</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item"  href="users.php">View User</a></li>
+            <li><a class="dropdown-item" href="create_user.php">Create User</a></li>
+          </ul>
         </li>
 
       </ul>
